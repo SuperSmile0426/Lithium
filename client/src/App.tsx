@@ -5,11 +5,14 @@ import "./App.css";
 // import styles
 import { lightTheme } from './styles';
 
+//routes
+import AppRoutes from "./AppRoutes";
+
 const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={lightTheme}>
-        <div>Dashboard</div>
+        <AppRoutes />
       </ThemeProvider>
     </Provider >
   );
