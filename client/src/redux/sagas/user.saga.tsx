@@ -74,6 +74,7 @@ export function* SignUpSaga(action: PayloadAction<{ user: IUser, next: Function 
 export function* GetMeSaga(action: PayloadAction<{ next: Function }>) {
   try {
     let result: ResponseGenerator = yield call(userApi.getMe);
+    console.log(result.data.users)
     if (result.data) {
       yield put(GetMeSuccess({ email: result.data.me.email, users: result.data.users }));
       action.payload.next();

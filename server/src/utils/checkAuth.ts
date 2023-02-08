@@ -11,7 +11,7 @@ import { MESSAGES, ERRORS } from '../constants';
 const checkAuth = (req: any, res: Response, next: Function) => {
   try {
     const token = req.header('Authorization').replace('Bearer ', '');
-    const { user } = jwt.verify(token, JWT_TOKEN);
+    const user = jwt.verify(token, JWT_TOKEN);
 
     req.user = user;
     next();
