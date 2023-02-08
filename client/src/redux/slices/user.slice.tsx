@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import IUser from "../../models/user.model";
 
 type errorType = {
   message: string

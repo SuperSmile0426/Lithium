@@ -1,4 +1,5 @@
 import React from 'react';
+import { SnackbarProvider } from 'notistack';
 import { Provider } from 'react-redux';
 import "./App.css";
 
@@ -18,7 +19,9 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={lightTheme}>
-        <AppRoutes />
+        <SnackbarProvider maxSnack={1}>
+          <AppRoutes />
+        </SnackbarProvider>
       </ThemeProvider>
     </Provider >
   );
